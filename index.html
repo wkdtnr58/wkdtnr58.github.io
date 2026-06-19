@@ -617,7 +617,6 @@ async function fetchSheet(sheetName) {
 }
 
 async function loadData() {
-  alert('loadData 함수 시작됨. SHEET_ID: ' + SHEET_ID);
   try {
     const [carRows, dealerRows] = await Promise.all([fetchSheet('매물'), fetchSheet('딜러')]);
 
@@ -643,10 +642,7 @@ async function loadData() {
 
     document.getElementById('stat-count').textContent = allCars.length;
     document.getElementById('car-count').textContent = allCars.length;
-    alert('데이터 로드 성공! 매물 ' + allCars.length + '개, 딜러 ' + allDealers.length + '명');
-    if (allCars.length > 0) {
-      alert('첫번째 차량 데이터:\n' + JSON.stringify(allCars[0], null, 2));
-    }
+    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#fff3cd;border:2px solid #e74c3c;padding:16px;font-size:12px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;">DEBUG 매물수:' + allCars.length + ' 딜러수:' + allDealers.length + '\n\n첫차량JSON:\n' + JSON.stringify(allCars[0], null, 2) + '</div>');
     renderCards(allCars.filter(c => c.hot), 'featured-grid');
     renderCards(allCars, 'all-car-grid');
     renderDealers();
