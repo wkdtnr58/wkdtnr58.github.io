@@ -644,6 +644,9 @@ async function loadData() {
     document.getElementById('stat-count').textContent = allCars.length;
     document.getElementById('car-count').textContent = allCars.length;
     alert('데이터 로드 성공! 매물 ' + allCars.length + '개, 딜러 ' + allDealers.length + '명');
+    if (allCars.length > 0) {
+      alert('첫번째 차량 데이터:\n' + JSON.stringify(allCars[0], null, 2));
+    }
     renderCards(allCars.filter(c => c.hot), 'featured-grid');
     renderCards(allCars, 'all-car-grid');
     renderDealers();
