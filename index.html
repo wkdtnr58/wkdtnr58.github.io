@@ -491,7 +491,7 @@ async function loadData() {
     allDealers = dealerRows.slice(1).map(r => {
       if (!r.c) return null;
       const v = r.c.map(c => c ? String(c.v ?? '').trim() : '');
-      return { id: v[0], name: v[1], career: v[2], msg: v[3], phone: v[4], kakao: v[5], photo: v[6] };
+      return { id: v[0], name: v[1], career: v[2], msg: v[3], phone: v[4], kakao: v[5], photo: toDriveImageUrl(v[6]) };
     }).filter(d => d && d.name);
 
     allCars = carRows.slice(1).map(r => {
@@ -501,7 +501,7 @@ async function loadData() {
       if (v[0] === '0' || v[0].toLowerCase() === 'dummy') return null;
       const soldDate = v[14] ? new Date(v[14]) : null;
       if (soldDate && (new Date() - soldDate) / 86400000 > 30) return null;
-      const photos = v.slice(17).filter(p => p.startsWith('http'));
+      const photos = v.slice(17).filter(p => p.startsWith('http')).map(toDriveImageUrl);
       return {
         id: v[0], name: v[1], brand: v[2], type: v[3], body: v[4],
         year: v[5], km: v[6], fuel: v[7], color: v[8],
@@ -523,6 +523,21 @@ async function loadData() {
       if (el) el.innerHTML = `<div class="error-msg">⚠️ 구글 시트 연결 오류<br><span style="font-size:13px;color:#aaa;margin-top:6px;display:block">${e.message}</span></div>`;
     });
   }
+}
+
+function toDriveImageUrl(url) {
+  if (!url) return url;
+  url = url.trim();
+  // /file/d/ID/view 형식
+  let m = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
+  if (m) return `https://drive.google.com/uc?export=view&id=${m[1]}`;
+  // open?id=ID 형식
+  m = url.match(/drive\.google\.com\/open\?id=([a-zA-Z0-9_-]+)/);
+  if (m) return `https://drive.google.com/uc?export=view&id=${m[1]}`;
+  // 이미 uc?id= 형식이면 export=view 붙여서 보정
+  m = url.match(/drive\.google\.com\/uc\?id=([a-zA-Z0-9_-]+)/);
+  if (m) return `https://drive.google.com/uc?export=view&id=${m[1]}`;
+  return url;
 }
 
 function getDealer(id) { return allDealers.find(d => d.id === id); }
@@ -783,7 +798,7 @@ async function loadGallery() {
     const imgs = rows.slice(1).map(r => {
       if (!r.c) return null;
       const v = r.c.map(c => c ? String(c.v ?? '').trim() : '');
-      return { url: v[0], caption: v[1] };
+      return { url: toDriveImageUrl(v[0]), caption: v[1] };
     }).filter(g => g && g.url.startsWith('http'));
     if (!imgs.length) return;
     galleryLoaded = true;
