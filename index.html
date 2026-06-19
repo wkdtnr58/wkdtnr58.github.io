@@ -639,13 +639,11 @@ async function loadData() {
         youtube: v[15], dealerId: v[16], photos
       };
     });
-    const photos_debug = carRows.slice(1).map(r => r.c ? r.c.map(c => c ? String(c.v ?? '').trim() : '(null)') : 'NO_C');
-    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#cce5ff;border:3px solid #004085;padding:16px;font-size:11px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;max-height:400px;overflow:auto;">BUILD TIME: ' + new Date().toISOString() + '\nRAW ROWS COUNT: ' + carRows.length + '\n\nRAW VALUES PER ROW:\n' + JSON.stringify(photos_debug, null, 1) + '</div>');
+    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#fff;border:3px solid red;padding:16px;font-size:10px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;max-height:500px;overflow:auto;">FULL carRows JSON:\n' + JSON.stringify(carRows, null, 1) + '</div>');
     allCars = allCars.filter(Boolean);
 
     document.getElementById('stat-count').textContent = allCars.length;
     document.getElementById('car-count').textContent = allCars.length;
-    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#fff3cd;border:2px solid #e74c3c;padding:16px;font-size:12px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;">DEBUG 매물수:' + allCars.length + ' 딜러수:' + allDealers.length + '\n\n첫차량JSON:\n' + JSON.stringify(allCars[0], null, 2) + '</div>');
     renderCards(allCars.filter(c => c.hot), 'featured-grid');
     renderCards(allCars, 'all-car-grid');
     renderDealers();
