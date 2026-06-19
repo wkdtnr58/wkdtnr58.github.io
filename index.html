@@ -638,7 +638,9 @@ async function loadData() {
         status: v[13] || '판매중', soldDate,
         youtube: v[15], dealerId: v[16], photos
       };
-    }).filter(Boolean);
+    });
+    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#d4edda;border:2px solid #28a745;padding:16px;font-size:11px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;max-height:300px;overflow:auto;">RAW ROWS COUNT: ' + carRows.length + '\n\nALL CARS BEFORE FILTER:\n' + JSON.stringify(allCars, null, 1) + '</div>');
+    allCars = allCars.filter(Boolean);
 
     document.getElementById('stat-count').textContent = allCars.length;
     document.getElementById('car-count').textContent = allCars.length;
