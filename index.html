@@ -528,15 +528,11 @@ async function loadData() {
 function toDriveImageUrl(url) {
   if (!url) return url;
   url = url.trim();
-  // /file/d/ID/view 형식
+  let id = null;
   let m = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
-  if (m) return `https://drive.google.com/uc?export=view&id=${m[1]}`;
-  // open?id=ID 형식
-  m = url.match(/drive\.google\.com\/open\?id=([a-zA-Z0-9_-]+)/);
-  if (m) return `https://drive.google.com/uc?export=view&id=${m[1]}`;
-  // 이미 uc?id= 형식이면 export=view 붙여서 보정
-  m = url.match(/drive\.google\.com\/uc\?id=([a-zA-Z0-9_-]+)/);
-  if (m) return `https://drive.google.com/uc?export=view&id=${m[1]}`;
+  if (m) id = m[1];
+  if (!id) { m = url.match(/[?&]id=([a-zA-Z0-9_-]+)/); if (m) id = m[1]; }
+  if (id) return `https://lh3.googleusercontent.com/d/${id}`;
   return url;
 }
 
