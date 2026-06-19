@@ -617,6 +617,7 @@ async function fetchSheet(sheetName) {
 }
 
 async function loadData() {
+  alert('loadData 함수 시작됨. SHEET_ID: ' + SHEET_ID);
   try {
     const [carRows, dealerRows] = await Promise.all([fetchSheet('매물'), fetchSheet('딜러')]);
 
@@ -642,10 +643,12 @@ async function loadData() {
 
     document.getElementById('stat-count').textContent = allCars.length;
     document.getElementById('car-count').textContent = allCars.length;
+    alert('데이터 로드 성공! 매물 ' + allCars.length + '개, 딜러 ' + allDealers.length + '명');
     renderCards(allCars.filter(c => c.hot), 'featured-grid');
     renderCards(allCars, 'all-car-grid');
     renderDealers();
   } catch(e) {
+    alert('에러 발생: ' + e.message);
     ['featured-grid','all-car-grid','dealer-grid'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.innerHTML = `<div class="error-msg">⚠️ 구글 시트 연결 필요<br><span style="font-size:13px;color:#aaa;margin-top:6px;display:block">SHEET_ID를 설정해주세요</span></div>`;
