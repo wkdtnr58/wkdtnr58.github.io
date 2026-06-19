@@ -411,7 +411,7 @@ footer strong{color:#c5d0e8}
       <p style="color:#c5d8f0;font-size:15px;margin-bottom:28px">9명의 전문 딜러가 최적의 차량을 찾아드립니다</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
         <button onclick="goConsult('')" style="background:#fff;color:#1a3a6b;border:none;padding:13px 28px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">📝 상담 신청하기</button>
-        <button onclick="showToast('카카오톡 채널 URL을 연결해주세요')" style="background:#fee500;color:#3c1e1e;border:none;padding:13px 28px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">💬 카카오톡 상담</button>
+        <button onclick="window.open(KAKAO_CHANNEL_URL,'_blank')" style="background:#fee500;color:#3c1e1e;border:none;padding:13px 28px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">💬 카카오톡 상담</button>
       </div>
     </div>
   </section>
@@ -456,7 +456,7 @@ footer strong{color:#c5d0e8}
             <h4>📞 바로 연락하기</h4>
             <div class="info-row"><div class="info-icon">📱</div><div><strong>051-292-4333</strong><br><span style="font-size:12px;color:#888">평일 09:00 ~ 18:00</span></div></div>
             <div class="info-row"><div class="info-icon">✉️</div><div>wkdtnr58@naver.com</div></div>
-            <div style="margin-top:14px"><button class="kakao-btn" onclick="showToast('카카오톡 채널 URL을 연결해주세요')">💬 카카오톡 채널 상담</button></div>
+            <div style="margin-top:14px"><button class="kakao-btn" onclick="window.open(KAKAO_CHANNEL_URL,'_blank')">💬 카카오톡 채널 상담</button></div>
           </div>
           <div class="info-card">
             <h4>⏰ 영업 시간</h4>
@@ -478,7 +478,7 @@ footer strong{color:#c5d0e8}
     <div class="section-inner">
       <div class="section-title">오시는 길</div>
       <div class="section-sub">직접 방문하시면 더욱 자세한 상담이 가능합니다</div>
-      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d6fa8da746d491e9a0d73e328044e44&libraries=services"></script>
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_KAKAO_JS_KEY&libraries=services"></script>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start">
         <div>
           <div class="info-card">
@@ -577,7 +577,7 @@ footer strong{color:#c5d0e8}
   </div>
 </div>
 
-<button class="float-kakao" onclick="showToast('카카오톡 채널 URL을 연결해주세요')">💬 카카오톡 상담</button>
+<button class="float-kakao" onclick="window.open(KAKAO_CHANNEL_URL,'_blank')">💬 카카오톡 상담</button>
 <div class="toast" id="toast"></div>
 
 <footer>
@@ -600,7 +600,9 @@ footer strong{color:#c5d0e8}
    딜러 시트 컬럼:
    A:딜러ID B:이름 C:경력/소개 D:어필메시지 E:연락처 F:카카오톡URL G:사진URL
 */
-const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID';
+const SHEET_ID = '1TAhvT9VIWlJ5lxW9DcEat4z5_X7A-lioGheOuDppAX4';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzeggeKh4TZf_NmjUH_N0WMMpJN7Jv7lWYJ9LnW6c2RiRp-pkfmY659ev60KEk-S8TX6w/exec';
+const KAKAO_CHANNEL_URL = 'http://pf.kakao.com/_KSxgXX';
 
 let allCars = [], allDealers = [], currentFilter = '전체';
 let slideIdx = 0, slideCars = [], currentModalDealer = null;
@@ -777,7 +779,7 @@ function openModal(id) {
     callBtn.onclick = () => showToast(`전화 연결: ${d.phone || '051-292-4333'}`);
   } else {
     dc.style.display = 'none';
-    document.getElementById('modal-kakao-btn').onclick = () => showToast('카카오톡 채널 URL을 연결해주세요');
+    document.getElementById('modal-kakao-btn').onclick = () => window.open(KAKAO_CHANNEL_URL,'_blank');
     document.getElementById('modal-call-btn').onclick = () => showToast('전화 연결: 051-292-4333');
   }
   document.getElementById('car-modal').classList.add('open');
@@ -856,12 +858,37 @@ function goConsult(carName) {
   document.querySelectorAll('.nav-links a').forEach((a,i)=>{a.classList.remove('active');if(i===3)a.classList.add('active')});
 }
 
-function submitForm() {
+async function submitForm() {
   const n=document.getElementById('f-name').value;
   const p=document.getElementById('f-phone').value;
   if(!n||!p){showToast('성함과 연락처는 필수 입력 항목입니다');return}
-  showToast('상담 신청이 완료되었습니다! 곧 연락드리겠습니다 😊');
-  ['f-name','f-phone','f-car','f-msg'].forEach(id=>document.getElementById(id).value='');
+  const data = {
+    name: n,
+    phone: p,
+    car: document.getElementById('f-car').value,
+    budget: document.getElementById('f-budget').value,
+    message: document.getElementById('f-msg').value
+  };
+  const btn = document.querySelector('.submit-btn');
+  const origText = btn.textContent;
+  btn.textContent = '전송 중...';
+  btn.disabled = true;
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type':'text/plain'},
+      body: JSON.stringify(data)
+    });
+    showToast('상담 신청이 완료되었습니다! 곧 연락드리겠습니다 😊');
+    ['f-name','f-phone','f-car','f-msg'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('f-budget').value='';
+  } catch(e) {
+    showToast('전송 중 오류가 발생했습니다. 전화로 문의해주세요 📞');
+  } finally {
+    btn.textContent = origText;
+    btn.disabled = false;
+  }
 }
 
 function showToast(msg) {
