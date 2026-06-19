@@ -639,7 +639,8 @@ async function loadData() {
         youtube: v[15], dealerId: v[16], photos
       };
     });
-    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#d4edda;border:2px solid #28a745;padding:16px;font-size:11px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;max-height:300px;overflow:auto;">RAW ROWS COUNT: ' + carRows.length + '\n\nALL CARS BEFORE FILTER:\n' + JSON.stringify(allCars, null, 1) + '</div>');
+    const photos_debug = carRows.slice(1).map(r => r.c ? r.c.map(c => c ? String(c.v ?? '').trim() : '(null)') : 'NO_C');
+    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#cce5ff;border:3px solid #004085;padding:16px;font-size:11px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;max-height:400px;overflow:auto;">BUILD TIME: ' + new Date().toISOString() + '\nRAW ROWS COUNT: ' + carRows.length + '\n\nRAW VALUES PER ROW:\n' + JSON.stringify(photos_debug, null, 1) + '</div>');
     allCars = allCars.filter(Boolean);
 
     document.getElementById('stat-count').textContent = allCars.length;
@@ -649,6 +650,7 @@ async function loadData() {
     renderCards(allCars, 'all-car-grid');
     renderDealers();
   } catch(e) {
+    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#f8d7da;border:2px solid #dc3545;padding:16px;font-size:12px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;">ERROR CAUGHT:\n' + e.message + '\n\nSTACK:\n' + e.stack + '</div>');
     alert('에러 발생: ' + e.message);
     ['featured-grid','all-car-grid','dealer-grid'].forEach(id => {
       const el = document.getElementById(id);
