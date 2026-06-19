@@ -51,7 +51,6 @@ section{padding:52px 24px}
 .car-specs{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .car-spec{font-size:12px;color:#666}
 .car-spec+.car-spec::before{content:'·';margin-right:12px;color:#bbb}
-/* 카드 딜러 미니 */
 .card-dealer{display:flex;align-items:center;gap:8px;padding:10px 0 2px;border-top:1px solid #f0f2f7;margin-top:8px;cursor:pointer}
 .card-dealer-avatar{width:28px;height:28px;border-radius:50%;object-fit:cover;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#2e7cf6;flex-shrink:0;overflow:hidden}
 .card-dealer-name{font-size:12px;font-weight:600;color:#444}
@@ -61,8 +60,6 @@ section{padding:52px 24px}
 .btn-detail:hover{background:#2e7cf6;color:#fff}
 .btn-consult{flex:1;padding:9px;background:#2e7cf6;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
 .btn-consult:hover{background:#1a5fd4}
-
-/* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;justify-content:center;align-items:center;padding:20px}
 .modal-overlay.open{display:flex}
 .modal{background:#fff;border-radius:16px;width:100%;max-width:720px;max-height:90vh;overflow-y:auto}
@@ -86,8 +83,6 @@ section{padding:52px 24px}
 .spec-label{font-size:12px;color:#888;margin-bottom:4px}
 .spec-val{font-size:14px;font-weight:600;color:#1a1a2e}
 .modal-desc{font-size:14px;color:#555;line-height:1.7;margin-bottom:20px;padding:14px;background:#f5f7fa;border-radius:8px}
-
-/* 모달 딜러 카드 */
 .modal-dealer{display:flex;align-items:center;gap:14px;background:#f0f4ff;border-radius:12px;padding:14px 16px;margin-bottom:20px;cursor:pointer;transition:background .2s}
 .modal-dealer:hover{background:#e0eaff}
 .modal-dealer-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#2e7cf6;flex-shrink:0;overflow:hidden}
@@ -96,20 +91,17 @@ section{padding:52px 24px}
 .modal-dealer-career{font-size:12px;color:#666;margin-top:2px}
 .modal-dealer-msg{font-size:13px;color:#444;margin-top:6px;line-height:1.5;font-style:italic}
 .modal-dealer-link{font-size:12px;color:#2e7cf6;font-weight:600;margin-top:4px}
-
 .modal-actions{display:flex;gap:10px}
 .modal-actions button{flex:1;padding:13px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s}
 .btn-kakao{background:#fee500;color:#3c1e1e;border:none}
 .btn-kakao:hover{background:#f0d800}
 .btn-call{background:#2e7cf6;color:#fff;border:none}
 .btn-call:hover{background:#1a5fd4}
-
-/* DEALER PAGE */
 .dealer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
 .dealer-card{background:#fff;border-radius:16px;border:1px solid #e8eaf0;overflow:hidden;transition:transform .2s,box-shadow .2s}
 .dealer-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(46,124,246,.12)}
 .dealer-card-header{background:linear-gradient(135deg,#1a3a6b,#2e5fad);padding:24px;text-align:center}
-.dealer-avatar-lg{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.4);margin:0 auto 12px;display:block;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;overflow:hidden}
+.dealer-avatar-lg{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.4);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;overflow:hidden;background:#3a7bd5}
 .dealer-card-name{font-size:18px;font-weight:700;color:#fff}
 .dealer-card-career{font-size:13px;color:#a8c4e8;margin-top:4px}
 .dealer-card-body{padding:20px}
@@ -118,8 +110,6 @@ section{padding:52px 24px}
 .dealer-contact-icon{width:30px;height:30px;background:#eef3ff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
 .dealer-cars-btn{width:100%;margin-top:16px;padding:10px;background:#2e7cf6;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer}
 .dealer-cars-btn:hover{background:#1a5fd4}
-
-/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
 @media(max-width:700px){.contact-grid{grid-template-columns:1fr}}
 .contact-form{background:#fff;border-radius:14px;padding:28px;border:1px solid #e8eaf0}
@@ -168,12 +158,9 @@ footer strong{color:#c5d0e8}
   </div>
 </nav>
 
-<!-- HOME -->
 <div id="page-home" class="page-section active">
   <div class="hero">
-    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:30px;padding:6px 16px;margin-bottom:18px;font-size:13px;font-weight:600;color:#fff;">
-      🏆 KB차차차 공식 제휴 딜러
-    </div>
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:30px;padding:6px 16px;margin-bottom:18px;font-size:13px;font-weight:600;color:#fff;">🏆 KB차차차 공식 제휴 딜러</div>
     <h1>믿을 수 있는 중고차,<br><span>금호자동차상사</span>에서 찾으세요</h1>
     <p>15년 경력의 전문 딜러가 엄선한 차량만 취급합니다</p>
     <div class="hero-search">
@@ -210,7 +197,6 @@ footer strong{color:#c5d0e8}
           <a href="https://www.kbchachacha.com/" target="_blank" style="display:inline-block;margin-top:12px;font-size:12px;color:#f5a800;font-weight:600;text-decoration:underline;">KB차차차에서 확인하기 →</a>
         </div>
         <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid #e8eaf0;text-align:center"><div style="font-size:36px;margin-bottom:12px">🏛️</div><div style="font-weight:700;margin-bottom:8px">전국 공인 매매사업조합</div><div style="font-size:13px;color:#666;line-height:1.6">(사)전국자동차매매사업조합연합회 소속 정식 허가 매매상사입니다<br><span style="color:#aaa;font-size:12px">허가번호 02-2620-000306</span></div></div>
-        <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid #e8eaf0;text-align:center"><div style="font-size:36px;margin-bottom:12px">🔍</div><div style="font-weight:700;margin-bottom:8px">성능 점검 보증</div><div style="font-size:13px;color:#666;line-height:1.6">출고 전 100개 항목 전수 점검, 이상 차량은 절대 취급하지 않습니다</div></div>
         <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid #e8eaf0;text-align:center"><div style="font-size:36px;margin-bottom:12px">📋</div><div style="font-weight:700;margin-bottom:8px">무사고 이력 확인</div><div style="font-size:13px;color:#666;line-height:1.6">카히스토리 & 보험개발원 이력 전수 조회, 투명하게 공개합니다</div></div>
         <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid #e8eaf0;text-align:center"><div style="font-size:36px;margin-bottom:12px">💬</div><div style="font-weight:700;margin-bottom:8px">1:1 전담 상담</div><div style="font-size:13px;color:#666;line-height:1.6">담당 딜러가 구매부터 이전등록까지 끝까지 책임집니다</div></div>
         <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid #e8eaf0;text-align:center"><div style="font-size:36px;margin-bottom:12px">🏦</div><div style="font-weight:700;margin-bottom:8px">저금리 할부 안내</div><div style="font-size:13px;color:#666;line-height:1.6">최저 연 3.9% 할부 상품 연계, 금융 비교 무료 서비스</div></div>
@@ -219,7 +205,6 @@ footer strong{color:#c5d0e8}
   </section>
 </div>
 
-<!-- CARS -->
 <div id="page-cars" class="page-section">
   <section>
     <div class="section-inner">
@@ -239,17 +224,12 @@ footer strong{color:#c5d0e8}
   </section>
 </div>
 
-<!-- ABOUT -->
 <div id="page-about" class="page-section">
-
-  <!-- 히어로 -->
   <div style="background:linear-gradient(135deg,#1a3a6b,#2e5fad);color:#fff;padding:56px 24px;text-align:center">
     <div style="font-size:13px;font-weight:600;color:#a8c4e8;margin-bottom:10px;letter-spacing:1px">ABOUT US</div>
     <h2 style="font-size:32px;font-weight:700;letter-spacing:-1px;margin-bottom:12px">금호자동차상사를<br>소개합니다</h2>
     <p style="font-size:15px;color:#c5d8f0;max-width:500px;margin:0 auto;line-height:1.7">부산 사하구에서 15년간 한 자리를 지켜온<br>믿을 수 있는 중고차 전문 매매상사입니다</p>
   </div>
-
-  <!-- 대표 인사말 -->
   <section style="background:#fff">
     <div class="section-inner">
       <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:center">
@@ -274,75 +254,35 @@ footer strong{color:#c5d0e8}
       </div>
     </div>
   </section>
-
-  <!-- 숫자로 보는 금호 -->
   <section>
     <div class="section-inner">
       <div class="section-title" style="text-align:center">숫자로 보는 금호자동차상사</div>
       <div class="section-sub" style="text-align:center">15년의 신뢰가 만든 결과입니다</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;text-align:center">
-        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0">
-          <div style="font-size:36px;font-weight:700;color:#2e7cf6">15년</div>
-          <div style="font-size:13px;color:#666;margin-top:6px">업력</div>
-        </div>
-        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0">
-          <div style="font-size:36px;font-weight:700;color:#2e7cf6">9명</div>
-          <div style="font-size:13px;color:#666;margin-top:6px">전문 딜러</div>
-        </div>
-        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0">
-          <div style="font-size:36px;font-weight:700;color:#2e7cf6">1,200+</div>
-          <div style="font-size:13px;color:#666;margin-top:6px">거래 완료</div>
-        </div>
-        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0">
-          <div style="font-size:36px;font-weight:700;color:#2e7cf6">4.9★</div>
-          <div style="font-size:13px;color:#666;margin-top:6px">고객 만족도</div>
-        </div>
-        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0">
-          <div style="font-size:36px;font-weight:700;color:#2e7cf6">0건</div>
-          <div style="font-size:13px;color:#666;margin-top:6px">허위매물</div>
-        </div>
+        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">15년</div><div style="font-size:13px;color:#666;margin-top:6px">업력</div></div>
+        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">9명</div><div style="font-size:13px;color:#666;margin-top:6px">전문 딜러</div></div>
+        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">1,200+</div><div style="font-size:13px;color:#666;margin-top:6px">거래 완료</div></div>
+        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">4.9★</div><div style="font-size:13px;color:#666;margin-top:6px">고객 만족도</div></div>
+        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">0건</div><div style="font-size:13px;color:#666;margin-top:6px">허위매물</div></div>
       </div>
     </div>
   </section>
-
-  <!-- 소속/인증 -->
   <section style="background:#fff">
     <div class="section-inner">
       <div class="section-title">공식 소속 및 인증</div>
       <div class="section-sub">검증된 기관에 소속된 정식 매매상사입니다</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
-        <div style="border:2px solid #f5a800;border-radius:14px;padding:22px;display:flex;gap:16px;align-items:center">
-          <div style="font-size:36px;flex-shrink:0">🏆</div>
-          <div>
-            <div style="font-weight:700;color:#c8860a;margin-bottom:4px">KB차차차 부산(신평매매단지)</div>
-            <div style="font-size:13px;color:#666;line-height:1.6">KB시세 기반 공식 제휴 딜러<br>투명한 가격 거래 보증</div>
-          </div>
-        </div>
-        <div style="border:1px solid #e8eaf0;border-radius:14px;padding:22px;display:flex;gap:16px;align-items:center">
-          <div style="font-size:36px;flex-shrink:0">🏛️</div>
-          <div>
-            <div style="font-weight:700;margin-bottom:4px">(사)전국자동차매매사업조합연합회</div>
-            <div style="font-size:13px;color:#666;line-height:1.6">정식 소속 회원사<br>허가번호 02-2620-000306</div>
-          </div>
-        </div>
-        <div style="border:1px solid #e8eaf0;border-radius:14px;padding:22px;display:flex;gap:16px;align-items:center">
-          <div style="font-size:36px;flex-shrink:0">📋</div>
-          <div>
-            <div style="font-weight:700;margin-bottom:4px">사업자 정보</div>
-            <div style="font-size:13px;color:#666;line-height:1.8">사업자등록번호 704-42-01101<br>부산광역시 사하구 을숙도대로 520 1호</div>
-          </div>
-        </div>
+        <div style="border:2px solid #f5a800;border-radius:14px;padding:22px;display:flex;gap:16px;align-items:center"><div style="font-size:36px;flex-shrink:0">🏆</div><div><div style="font-weight:700;color:#c8860a;margin-bottom:4px">KB차차차 부산(신평매매단지)</div><div style="font-size:13px;color:#666;line-height:1.6">KB시세 기반 공식 제휴 딜러<br>투명한 가격 거래 보증</div></div></div>
+        <div style="border:1px solid #e8eaf0;border-radius:14px;padding:22px;display:flex;gap:16px;align-items:center"><div style="font-size:36px;flex-shrink:0">🏛️</div><div><div style="font-weight:700;margin-bottom:4px">(사)전국자동차매매사업조합연합회</div><div style="font-size:13px;color:#666;line-height:1.6">정식 소속 회원사<br>허가번호 02-2620-000306</div></div></div>
+        <div style="border:1px solid #e8eaf0;border-radius:14px;padding:22px;display:flex;gap:16px;align-items:center"><div style="font-size:36px;flex-shrink:0">📋</div><div><div style="font-weight:700;margin-bottom:4px">사업자 정보</div><div style="font-size:13px;color:#666;line-height:1.8">사업자등록번호 704-42-01101<br>부산광역시 사하구 을숙도대로 520 1호</div></div></div>
       </div>
     </div>
   </section>
-
-  <!-- 상사 사진 갤러리 -->
   <section>
     <div class="section-inner">
       <div class="section-title">상사 갤러리</div>
       <div class="section-sub">금호자동차상사의 실제 모습입니다</div>
       <div id="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px">
-        <!-- 구글 시트 gallery 시트에서 불러옴 -->
         <div style="background:#e8eef8;border-radius:12px;height:180px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#8aa5cc;flex-direction:column;gap:8px"><div style="font-size:28px">🏢</div>상사 외관 사진</div>
         <div style="background:#e8eef8;border-radius:12px;height:180px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#8aa5cc;flex-direction:column;gap:8px"><div style="font-size:28px">🚗</div>전시 차량</div>
         <div style="background:#e8eef8;border-radius:12px;height:180px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#8aa5cc;flex-direction:column;gap:8px"><div style="font-size:28px">👥</div>딜러 단체사진</div>
@@ -351,60 +291,29 @@ footer strong{color:#c5d0e8}
       <p style="font-size:12px;color:#aaa;margin-top:12px;text-align:center">구글 시트 'gallery' 시트에 사진 URL을 입력하면 자동으로 표시됩니다</p>
     </div>
   </section>
-
-  <!-- 고객 후기 -->
   <section style="background:#fff">
     <div class="section-inner">
       <div class="section-title">고객 후기</div>
       <div class="section-sub">실제 거래 고객분들의 생생한 후기입니다</div>
-      <div id="review-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">
-        <!-- 샘플 후기 (구글 시트 연동 전) -->
-        <div style="background:#f8faff;border-radius:14px;padding:20px;border:1px solid #e8eaf0">
-          <div style="color:#f5a800;font-size:14px;margin-bottom:10px">★★★★★</div>
-          <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:14px">"딜러분이 정말 친절하게 설명해주셔서 처음 중고차 구매인데도 불안함 없이 진행할 수 있었어요. 가격도 합리적이고 강력 추천합니다!"</p>
-          <div style="display:flex;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:50%;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#2e7cf6">김</div><div><div style="font-size:13px;font-weight:600">김○○ 고객</div><div style="font-size:11px;color:#aaa">그랜저 구매 · 2024.03</div></div></div>
-        </div>
-        <div style="background:#f8faff;border-radius:14px;padding:20px;border:1px solid #e8eaf0">
-          <div style="color:#f5a800;font-size:14px;margin-bottom:10px">★★★★★</div>
-          <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:14px">"KB차차차로 검색하다 방문했는데 실제로 보니 사진보다 상태가 더 좋았어요. 이전등록까지 다 도와주셔서 정말 편했습니다."</p>
-          <div style="display:flex;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:50%;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#2e7cf6">박</div><div><div style="font-size:13px;font-weight:600">박○○ 고객</div><div style="font-size:11px;color:#aaa">쏘렌토 구매 · 2024.05</div></div></div>
-        </div>
-        <div style="background:#f8faff;border-radius:14px;padding:20px;border:1px solid #e8eaf0">
-          <div style="color:#f5a800;font-size:14px;margin-bottom:10px">★★★★★</div>
-          <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:14px">"허위매물 없고 설명이 투명해서 믿음이 갔어요. 할부 연계도 빠르게 처리해주셨고 다음에도 꼭 여기서 살 거예요."</p>
-          <div style="display:flex;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:50%;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#2e7cf6">이</div><div><div style="font-size:13px;font-weight:600">이○○ 고객</div><div style="font-size:11px;color:#aaa">카니발 구매 · 2024.06</div></div></div>
-        </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">
+        <div style="background:#f8faff;border-radius:14px;padding:20px;border:1px solid #e8eaf0"><div style="color:#f5a800;font-size:14px;margin-bottom:10px">★★★★★</div><p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:14px">"딜러분이 정말 친절하게 설명해주셔서 처음 중고차 구매인데도 불안함 없이 진행할 수 있었어요."</p><div style="display:flex;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:50%;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#2e7cf6">김</div><div><div style="font-size:13px;font-weight:600">김○○ 고객</div><div style="font-size:11px;color:#aaa">그랜저 구매 · 2024.03</div></div></div></div>
+        <div style="background:#f8faff;border-radius:14px;padding:20px;border:1px solid #e8eaf0"><div style="color:#f5a800;font-size:14px;margin-bottom:10px">★★★★★</div><p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:14px">"KB차차차로 검색하다 방문했는데 실제로 보니 사진보다 상태가 더 좋았어요."</p><div style="display:flex;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:50%;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#2e7cf6">박</div><div><div style="font-size:13px;font-weight:600">박○○ 고객</div><div style="font-size:11px;color:#aaa">쏘렌토 구매 · 2024.05</div></div></div></div>
+        <div style="background:#f8faff;border-radius:14px;padding:20px;border:1px solid #e8eaf0"><div style="color:#f5a800;font-size:14px;margin-bottom:10px">★★★★★</div><p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:14px">"허위매물 없고 설명이 투명해서 믿음이 갔어요. 할부 연계도 빠르게 처리해주셨어요."</p><div style="display:flex;align-items:center;gap:8px"><div style="width:32px;height:32px;border-radius:50%;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#2e7cf6">이</div><div><div style="font-size:13px;font-weight:600">이○○ 고객</div><div style="font-size:11px;color:#aaa">카니발 구매 · 2024.06</div></div></div></div>
       </div>
     </div>
   </section>
-
-  <!-- 연혁 -->
   <section>
     <div class="section-inner">
       <div class="section-title">연혁</div>
       <div class="section-sub">금호자동차상사의 걸어온 길입니다</div>
       <div style="max-width:600px;margin:0 auto">
-        <div style="display:flex;gap:20px;margin-bottom:24px;align-items:flex-start">
-          <div style="width:72px;font-size:15px;font-weight:700;color:#2e7cf6;flex-shrink:0;padding-top:2px">2024</div>
-          <div style="flex:1;border-left:2px solid #e8eaf0;padding-left:20px"><div style="font-size:14px;color:#444;line-height:1.8">KB차차차 우수 딜러 선정<br>온라인 매물 시스템 구축</div></div>
-        </div>
-        <div style="display:flex;gap:20px;margin-bottom:24px;align-items:flex-start">
-          <div style="width:72px;font-size:15px;font-weight:700;color:#2e7cf6;flex-shrink:0;padding-top:2px">2020</div>
-          <div style="flex:1;border-left:2px solid #e8eaf0;padding-left:20px"><div style="font-size:14px;color:#444;line-height:1.8">KB차차차 부산(신평매매단지) 공식 입점<br>전문 딜러 9명 체제 구축</div></div>
-        </div>
-        <div style="display:flex;gap:20px;margin-bottom:24px;align-items:flex-start">
-          <div style="width:72px;font-size:15px;font-weight:700;color:#2e7cf6;flex-shrink:0;padding-top:2px">2015</div>
-          <div style="flex:1;border-left:2px solid #e8eaf0;padding-left:20px"><div style="font-size:14px;color:#444;line-height:1.8">(사)전국자동차매매사업조합연합회 정식 가입<br>누적 거래 500건 달성</div></div>
-        </div>
-        <div style="display:flex;gap:20px;align-items:flex-start">
-          <div style="width:72px;font-size:15px;font-weight:700;color:#2e7cf6;flex-shrink:0;padding-top:2px">2009</div>
-          <div style="flex:1;border-left:2px solid #e8eaf0;padding-left:20px"><div style="font-size:14px;color:#444;line-height:1.8">금호자동차상사 창업<br>부산광역시 사하구 을숙도대로 520 입점</div></div>
-        </div>
+        <div style="display:flex;gap:20px;margin-bottom:24px;align-items:flex-start"><div style="width:72px;font-size:15px;font-weight:700;color:#2e7cf6;flex-shrink:0;padding-top:2px">2024</div><div style="flex:1;border-left:2px solid #e8eaf0;padding-left:20px"><div style="font-size:14px;color:#444;line-height:1.8">KB차차차 우수 딜러 선정<br>온라인 매물 시스템 구축</div></div></div>
+        <div style="display:flex;gap:20px;margin-bottom:24px;align-items:flex-start"><div style="width:72px;font-size:15px;font-weight:700;color:#2e7cf6;flex-shrink:0;padding-top:2px">2020</div><div style="flex:1;border-left:2px solid #e8eaf0;padding-left:20px"><div style="font-size:14px;color:#444;line-height:1.8">KB차차차 부산(신평매매단지) 공식 입점<br>전문 딜러 9명 체제 구축</div></div></div>
+        <div style="display:flex;gap:20px;margin-bottom:24px;align-items:flex-start"><div style="width:72px;font-size:15px;font-weight:700;color:#2e7cf6;flex-shrink:0;padding-top:2px">2015</div><div style="flex:1;border-left:2px solid #e8eaf0;padding-left:20px"><div style="font-size:14px;color:#444;line-height:1.8">(사)전국자동차매매사업조합연합회 정식 가입<br>누적 거래 500건 달성</div></div></div>
+        <div style="display:flex;gap:20px;align-items:flex-start"><div style="width:72px;font-size:15px;font-weight:700;color:#2e7cf6;flex-shrink:0;padding-top:2px">2009</div><div style="flex:1;border-left:2px solid #e8eaf0;padding-left:20px"><div style="font-size:14px;color:#444;line-height:1.8">금호자동차상사 창업<br>부산광역시 사하구 을숙도대로 520 입점</div></div></div>
       </div>
     </div>
   </section>
-
-  <!-- CTA -->
   <section style="background:linear-gradient(135deg,#1a3a6b,#2e5fad);text-align:center;padding:52px 24px">
     <div style="color:#fff">
       <h3 style="font-size:24px;font-weight:700;margin-bottom:12px">지금 바로 상담해보세요</h3>
@@ -417,7 +326,6 @@ footer strong{color:#c5d0e8}
   </section>
 </div>
 
-<!-- DEALERS -->
 <div id="page-dealers" class="page-section">
   <section>
     <div class="section-inner">
@@ -428,7 +336,6 @@ footer strong{color:#c5d0e8}
   </section>
 </div>
 
-<!-- CONTACT -->
 <div id="page-contact" class="page-section">
   <section>
     <div class="section-inner">
@@ -440,9 +347,7 @@ footer strong{color:#c5d0e8}
           <div class="form-group"><label>성함 *</label><input type="text" id="f-name" placeholder="홍길동"></div>
           <div class="form-group"><label>연락처 *</label><input type="tel" id="f-phone" placeholder="010-0000-0000"></div>
           <div class="form-group"><label>관심 차량</label><input type="text" id="f-car" placeholder="예: 그랜저, 싼타페 등"></div>
-          <div class="form-group"><label>예산</label>
-            <select id="f-budget"><option value="">선택</option><option>1,000만원 이하</option><option>1,000~2,000만원</option><option>2,000~3,000만원</option><option>3,000만원 이상</option></select>
-          </div>
+          <div class="form-group"><label>예산</label><select id="f-budget"><option value="">선택</option><option>1,000만원 이하</option><option>1,000~2,000만원</option><option>2,000~3,000만원</option><option>3,000만원 이상</option></select></div>
           <div class="form-group"><label>문의 내용</label><textarea id="f-msg" placeholder="궁금하신 점을 자유롭게 작성해주세요"></textarea></div>
           <button class="submit-btn" onclick="submitForm()">상담 신청하기 →</button>
         </div>
@@ -472,7 +377,6 @@ footer strong{color:#c5d0e8}
   </section>
 </div>
 
-<!-- LOCATION -->
 <div id="page-location" class="page-section">
   <section>
     <div class="section-inner">
@@ -488,10 +392,7 @@ footer strong{color:#c5d0e8}
           </div>
           <div class="info-card" style="margin-top:16px">
             <h4>🚌 대중교통</h4>
-            <div style="font-size:14px;color:#444;line-height:2">
-              <div>🚇 지하철 1호선 신평역 하차 후 버스 환승</div>
-              <div>🚌 을숙도대로 방면 버스 이용</div>
-            </div>
+            <div style="font-size:14px;color:#444;line-height:2"><div>🚇 지하철 1호선 신평역 하차 후 버스 환승</div><div>🚌 을숙도대로 방면 버스 이용</div></div>
           </div>
           <div class="info-card" style="margin-top:16px">
             <h4>🚗 자가용</h4>
@@ -499,15 +400,7 @@ footer strong{color:#c5d0e8}
           </div>
         </div>
         <div>
-          <div style="position:relative">
-            <div class="map-wrap" id="kakao-map">
-              <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#5a7ab5;">
-                <div style="font-size:36px">🗺️</div>
-                <div style="font-size:14px;font-weight:600">카카오맵</div>
-                <div style="font-size:12px;color:#8aa5cc;text-align:center;line-height:1.6">GitHub 배포 후<br>카카오 JS 키 입력 시 지도 표시</div>
-              </div>
-            </div>
-          </div>
+          <div class="map-wrap" id="kakao-map"></div>
           <div style="margin-top:10px;text-align:right">
             <a href="https://map.kakao.com/link/search/부산광역시 사하구 을숙도대로 520" target="_blank" style="display:inline-block;padding:9px 20px;background:#fee500;color:#3c1e1e;border-radius:8px;font-size:13px;font-weight:700;">카카오맵에서 크게 보기</a>
           </div>
@@ -517,26 +410,17 @@ footer strong{color:#c5d0e8}
   </section>
 </div>
 
-<!-- CAR MODAL -->
 <div class="modal-overlay" id="car-modal" onclick="closeModal(event,'car-modal')">
   <div class="modal">
-    <div class="modal-header">
-      <h3 id="modal-title">차량 상세</h3>
-      <button class="modal-close" onclick="document.getElementById('car-modal').classList.remove('open')">×</button>
-    </div>
+    <div class="modal-header"><h3 id="modal-title">차량 상세</h3><button class="modal-close" onclick="document.getElementById('car-modal').classList.remove('open')">×</button></div>
     <div class="modal-body">
-      <div class="slider-wrap">
-        <div class="slider-track" id="slider-track"></div>
-        <button class="slider-btn prev" onclick="slideMove(-1)">&#8249;</button>
-        <button class="slider-btn next" onclick="slideMove(1)">&#8250;</button>
-      </div>
+      <div class="slider-wrap"><div class="slider-track" id="slider-track"></div><button class="slider-btn prev" onclick="slideMove(-1)">&#8249;</button><button class="slider-btn next" onclick="slideMove(1)">&#8250;</button></div>
       <div class="slider-dots" id="slider-dots"></div>
       <div style="height:16px"></div>
       <div class="modal-price" id="modal-price"></div>
       <div id="modal-year" style="font-size:13px;color:#888;margin-bottom:16px"></div>
       <div class="modal-specs-grid" id="modal-specs"></div>
       <div class="modal-desc" id="modal-desc"></div>
-      <!-- 딜러 카드 -->
       <div class="modal-dealer" id="modal-dealer-card" onclick="openDealerFromModal()">
         <div class="modal-dealer-avatar" id="modal-dealer-avatar"></div>
         <div class="modal-dealer-info">
@@ -546,21 +430,14 @@ footer strong{color:#c5d0e8}
           <div class="modal-dealer-link">딜러 프로필 보기 →</div>
         </div>
       </div>
-      <div class="modal-actions">
-        <button class="btn-kakao" id="modal-kakao-btn">💬 카카오톡 상담</button>
-        <button class="btn-call" id="modal-call-btn">📞 전화 상담</button>
-      </div>
+      <div class="modal-actions"><button class="btn-kakao" id="modal-kakao-btn">💬 카카오톡 상담</button><button class="btn-call" id="modal-call-btn">📞 전화 상담</button></div>
     </div>
   </div>
 </div>
 
-<!-- DEALER MODAL -->
 <div class="modal-overlay" id="dealer-modal" onclick="closeModal(event,'dealer-modal')">
   <div class="modal" style="max-width:500px">
-    <div class="modal-header">
-      <h3 id="dm-title">딜러 프로필</h3>
-      <button class="modal-close" onclick="document.getElementById('dealer-modal').classList.remove('open')">×</button>
-    </div>
+    <div class="modal-header"><h3 id="dm-title">딜러 프로필</h3><button class="modal-close" onclick="document.getElementById('dealer-modal').classList.remove('open')">×</button></div>
     <div class="modal-body">
       <div style="text-align:center;margin-bottom:20px">
         <div id="dm-avatar" style="width:90px;height:90px;border-radius:50%;margin:0 auto 12px;overflow:hidden;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#2e7cf6;"></div>
@@ -592,14 +469,6 @@ footer strong{color:#c5d0e8}
 </footer>
 
 <script>
-/* ===== 구글 시트 설정 =====
-   매물 시트 컬럼:
-   A:id B:차량명 C:브랜드 D:종류 E:차체 F:연식 G:주행거리 H:연료 I:색상 J:가격
-   K:인기(Y/N) L:배지 M:설명 N:판매상태 O:판매완료일 P:유튜브URL Q:딜러ID R~AF:사진1~15
-
-   딜러 시트 컬럼:
-   A:딜러ID B:이름 C:경력/소개 D:어필메시지 E:연락처 F:카카오톡URL G:사진URL
-*/
 const SHEET_ID = '1TAhvT9VIWlJ5lxW9DcEat4z5_X7A-lioGheOuDppAX4';
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzeggeKh4TZf_NmjUH_N0WMMpJN7Jv7lWYJ9LnW6c2RiRp-pkfmY659ev60KEk-S8TX6w/exec';
 const KAKAO_CHANNEL_URL = 'http://pf.kakao.com/_KSxgXX';
@@ -612,7 +481,6 @@ async function fetchSheet(sheetName) {
   const res = await fetch(url);
   const txt = await res.text();
   const json = JSON.parse(txt.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\)/)[1]);
-  console.log('=== ' + sheetName + ' RAW ===', json.table.rows.slice(0,3));
   return json.table.rows;
 }
 
@@ -621,12 +489,16 @@ async function loadData() {
     const [carRows, dealerRows] = await Promise.all([fetchSheet('매물'), fetchSheet('딜러')]);
 
     allDealers = dealerRows.slice(1).map(r => {
+      if (!r.c) return null;
       const v = r.c.map(c => c ? String(c.v ?? '').trim() : '');
       return { id: v[0], name: v[1], career: v[2], msg: v[3], phone: v[4], kakao: v[5], photo: v[6] };
-    }).filter(d => d.name);
+    }).filter(d => d && d.name);
 
     allCars = carRows.slice(1).map(r => {
+      if (!r.c) return null;
       const v = r.c.map(c => c ? String(c.v ?? '').trim() : '');
+      if (!v[0] && !v[1]) return null;
+      if (v[0] === '0' || v[0].toLowerCase() === 'dummy') return null;
       const soldDate = v[14] ? new Date(v[14]) : null;
       if (soldDate && (new Date() - soldDate) / 86400000 > 30) return null;
       const photos = v.slice(17).filter(p => p.startsWith('http'));
@@ -638,9 +510,7 @@ async function loadData() {
         status: v[13] || '판매중', soldDate,
         youtube: v[15], dealerId: v[16], photos
       };
-    });
-    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#fff;border:3px solid red;padding:16px;font-size:10px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;max-height:500px;overflow:auto;">FULL carRows JSON:\n' + JSON.stringify(carRows, null, 1) + '</div>');
-    allCars = allCars.filter(Boolean);
+    }).filter(Boolean);
 
     document.getElementById('stat-count').textContent = allCars.length;
     document.getElementById('car-count').textContent = allCars.length;
@@ -648,20 +518,19 @@ async function loadData() {
     renderCards(allCars, 'all-car-grid');
     renderDealers();
   } catch(e) {
-    document.body.insertAdjacentHTML('afterbegin', '<div style="background:#f8d7da;border:2px solid #dc3545;padding:16px;font-size:12px;white-space:pre-wrap;word-break:break-all;position:relative;z-index:9999;font-family:monospace;">ERROR CAUGHT:\n' + e.message + '\n\nSTACK:\n' + e.stack + '</div>');
-    alert('에러 발생: ' + e.message);
     ['featured-grid','all-car-grid','dealer-grid'].forEach(id => {
       const el = document.getElementById(id);
-      if (el) el.innerHTML = `<div class="error-msg">⚠️ 구글 시트 연결 필요<br><span style="font-size:13px;color:#aaa;margin-top:6px;display:block">SHEET_ID를 설정해주세요</span></div>`;
+      if (el) el.innerHTML = `<div class="error-msg">⚠️ 구글 시트 연결 오류<br><span style="font-size:13px;color:#aaa;margin-top:6px;display:block">${e.message}</span></div>`;
     });
   }
 }
 
 function getDealer(id) { return allDealers.find(d => d.id === id); }
 
-function avatarHTML(d, size=28) {
+function avatarHTML(d, size) {
+  size = size || 28;
   if (d && d.photo && d.photo.startsWith('http'))
-    return `<img src="${d.photo}" style="width:${size}px;height:${size}px;border-radius:50%;object-fit:cover;" onerror="this.outerHTML='<div style=\\'width:${size}px;height:${size}px;border-radius:50%;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:${Math.floor(size*.45)}px;font-weight:700;color:#2e7cf6;\\'>${d?d.name[0]:'?'}</div>'">`; 
+    return `<img src="${d.photo}" style="width:${size}px;height:${size}px;border-radius:50%;object-fit:cover;" onerror="this.outerHTML='<div style=\\'width:${size}px;height:${size}px;border-radius:50%;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:${Math.floor(size*.45)}px;font-weight:700;color:#2e7cf6;\\'>${d?d.name[0]:'?'}</div>'">`;
   return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:#dde8f5;display:flex;align-items:center;justify-content:center;font-size:${Math.floor(size*.45)}px;font-weight:700;color:#2e7cf6;">${d?d.name[0]:'?'}</div>`;
 }
 
@@ -718,7 +587,6 @@ function renderDealers() {
   }).join('');
 }
 
-// SLIDER
 function getYoutubeId(url) {
   if (!url) return null;
   const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/);
@@ -749,7 +617,6 @@ function updateSlider() {
 function slideMove(dir) { slideIdx=(slideIdx+dir+slideCars.length)%slideCars.length; updateSlider(); }
 function goSlide(i) { slideIdx=i; updateSlider(); }
 
-// CAR MODAL
 function openModal(id) {
   const c = allCars.find(x => x.id===id);
   if (!c) return;
@@ -778,10 +645,8 @@ function openModal(id) {
     document.getElementById('modal-dealer-career').textContent = d.career;
     document.getElementById('modal-dealer-msg').textContent = '"' + d.msg + '"';
     dc.style.display = 'flex';
-    const kakaoBtn = document.getElementById('modal-kakao-btn');
-    const callBtn = document.getElementById('modal-call-btn');
-    kakaoBtn.onclick = () => d.kakao ? window.open(d.kakao,'_blank') : showToast('카카오톡 URL을 등록해주세요');
-    callBtn.onclick = () => showToast(`전화 연결: ${d.phone || '051-292-4333'}`);
+    document.getElementById('modal-kakao-btn').onclick = () => d.kakao ? window.open(d.kakao,'_blank') : window.open(KAKAO_CHANNEL_URL,'_blank');
+    document.getElementById('modal-call-btn').onclick = () => showToast(`전화 연결: ${d.phone || '051-292-4333'}`);
   } else {
     dc.style.display = 'none';
     document.getElementById('modal-kakao-btn').onclick = () => window.open(KAKAO_CHANNEL_URL,'_blank');
@@ -796,7 +661,6 @@ function openDealerFromModal() {
   openDealerModal(currentModalDealer.id);
 }
 
-// DEALER MODAL
 function openDealerModal(dealerId) {
   const d = allDealers.find(x => x.id===dealerId);
   if (!d) return;
@@ -860,7 +724,7 @@ function showPage(page, el) {
 function goConsult(carName) {
   document.getElementById('f-car').value=carName||'';
   showPage('contact',null);
-  document.querySelectorAll('.nav-links a').forEach((a,i)=>{a.classList.remove('active');if(i===3)a.classList.add('active')});
+  document.querySelectorAll('.nav-links a').forEach((a,i)=>{a.classList.remove('active');if(i===4)a.classList.add('active')});
 }
 
 async function submitForm() {
@@ -868,8 +732,7 @@ async function submitForm() {
   const p=document.getElementById('f-phone').value;
   if(!n||!p){showToast('성함과 연락처는 필수 입력 항목입니다');return}
   const data = {
-    name: n,
-    phone: p,
+    name: n, phone: p,
     car: document.getElementById('f-car').value,
     budget: document.getElementById('f-budget').value,
     message: document.getElementById('f-msg').value
@@ -879,12 +742,7 @@ async function submitForm() {
   btn.textContent = '전송 중...';
   btn.disabled = true;
   try {
-    await fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {'Content-Type':'text/plain'},
-      body: JSON.stringify(data)
-    });
+    await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: {'Content-Type':'text/plain'}, body: JSON.stringify(data) });
     showToast('상담 신청이 완료되었습니다! 곧 연락드리겠습니다 😊');
     ['f-name','f-phone','f-car','f-msg'].forEach(id=>document.getElementById(id).value='');
     document.getElementById('f-budget').value='';
@@ -917,16 +775,16 @@ function initMap() {
   });
 }
 
-// GALLERY (구글 시트 'gallery' 시트: A=사진URL, B=설명)
 let galleryLoaded = false;
 async function loadGallery() {
   if (galleryLoaded) return;
   try {
     const rows = await fetchSheet('gallery');
     const imgs = rows.slice(1).map(r => {
+      if (!r.c) return null;
       const v = r.c.map(c => c ? String(c.v ?? '').trim() : '');
       return { url: v[0], caption: v[1] };
-    }).filter(g => g.url.startsWith('http'));
+    }).filter(g => g && g.url.startsWith('http'));
     if (!imgs.length) return;
     galleryLoaded = true;
     document.getElementById('gallery-grid').innerHTML = imgs.map(g =>
