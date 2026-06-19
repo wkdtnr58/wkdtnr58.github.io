@@ -558,11 +558,12 @@ function avatarHTML(d, size) {
 
 function makeThumb(car) {
   const soldBadge = car.status==='판매완료' ? `<div style="position:absolute;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;"><span style="background:#e74c3c;color:#fff;font-size:15px;font-weight:700;padding:8px 20px;border-radius:30px;">판매완료</span></div>` : '';
+  const labelBadge = (car.badge && car.status!=='판매완료') ? `<div class="car-badge-wrap"><span class="car-badge${car.hot?' hot':''}">${car.badge}</span></div>` : '';
   const d = getDealer(car.dealerId);
   const dealerRow = d ? `<div class="card-dealer" onclick="event.stopPropagation();openDealerModal('${d.id}')">${avatarHTML(d,28)}<div><div class="card-dealer-name">${d.name} 딜러</div><div class="card-dealer-role">담당 딜러</div></div></div>` : '';
   if (car.photos.length)
-    return `<div style="position:relative"><img class="car-thumb" src="${car.photos[0]}" alt="${car.name}" onerror="this.outerHTML='<div class=\\'car-thumb-placeholder\\'>🚗</div>'">${soldBadge}</div>${dealerRow}`;
-  return `<div class="car-thumb-placeholder" style="position:relative">🚗${soldBadge}</div>${dealerRow}`;
+    return `<div style="position:relative"><img class="car-thumb" src="${car.photos[0]}" alt="${car.name}" onerror="this.outerHTML='<div class=\\'car-thumb-placeholder\\'>🚗</div>'">${labelBadge}${soldBadge}</div>${dealerRow}`;
+  return `<div class="car-thumb-placeholder" style="position:relative">🚗${labelBadge}${soldBadge}</div>${dealerRow}`;
 }
 
 function renderCards(data, containerId) {
