@@ -151,10 +151,10 @@ footer strong{color:#c5d0e8}
       <a onclick="showPage('cars',this)">매물 목록</a>
       <a onclick="showPage('about',this)">상사 소개</a>
       <a onclick="showPage('dealers',this)">딜러 소개</a>
-      <a onclick="showPage('contact',this)">상담 신청</a>
+      <a onclick="showPage('contact',this)">연락하기</a>
       <a onclick="showPage('location',this)">오시는 길</a>
     </div>
-    <button class="nav-cta" onclick="goConsult('')">무료 상담</button>
+    <button class="nav-cta" onclick="showPage('contact',null);document.querySelectorAll('.nav-links a').forEach((a,i)=>{a.classList.remove('active');if(i===4)a.classList.add('active')})">무료 상담</button>
   </div>
 </nav>
 
@@ -234,19 +234,22 @@ footer strong{color:#c5d0e8}
     <div class="section-inner">
       <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:center">
         <div style="text-align:center">
-          <div style="width:140px;height:140px;border-radius:50%;background:#e8eef8;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:56px;border:4px solid #dde8f5;">👤</div>
-          <div style="font-size:17px;font-weight:700">대표 홍○○</div>
+          <div id="ceo-photo" style="width:140px;height:140px;border-radius:50%;background:#e8eef8;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:56px;border:4px solid #dde8f5;overflow:hidden;">👤</div>
+          <div style="font-size:17px;font-weight:700">대표 이장숙</div>
           <div style="font-size:13px;color:#888;margin-top:4px">금호자동차상사 대표</div>
-          <div style="font-size:12px;color:#aaa;margin-top:2px">중고차 업력 15년</div>
+          <div style="font-size:12px;color:#aaa;margin-top:2px">중고차 업력 26년</div>
         </div>
         <div>
           <div style="font-size:13px;font-weight:700;color:#2e7cf6;letter-spacing:1px;margin-bottom:12px">대표 인사말</div>
           <h3 style="font-size:22px;font-weight:700;line-height:1.4;margin-bottom:16px;color:#1a1a2e">"고객의 입장에서<br>생각하고 행동합니다"</h3>
           <p style="font-size:14px;color:#555;line-height:1.9">
-            안녕하세요, 금호자동차상사 대표입니다.<br><br>
-            저희 상사는 2009년 창업 이래 부산 사하구 신평매매단지에서 한 자리를 지켜왔습니다.
+            안녕하세요, 신평 KB차차차 부산자동차매매단지 1호 상사, 금호자동차상사입니다.<br><br>
+            저희 상사는 대표 이장숙이 중고차 업력 26년을 바탕으로 부산 사하구 신평매매단지에서 한 자리를 지켜왔습니다.
             중고차 거래에서 가장 중요한 것은 <strong>신뢰</strong>라고 생각합니다.
             그래서 저희는 허위 매물 없이, KB시세 기반의 투명한 가격만을 고집합니다.<br><br>
+            승용차부터 화물차까지 모든 종류의 중고 자동차를 사고팝니다.
+            매매·알선·위탁은 물론 등록대행, 할부판매, 자동차보험, 폐차, 수출까지
+            자동차와 관련된 모든 절차를 한 곳에서 원스톱으로 도와드립니다.<br><br>
             9명의 전문 딜러가 차량 선택부터 이전등록까지 끝까지 함께합니다.
             금호자동차상사를 찾아주시는 모든 분들께 만족스러운 거래가 되도록 최선을 다하겠습니다.
           </p>
@@ -259,7 +262,7 @@ footer strong{color:#c5d0e8}
       <div class="section-title" style="text-align:center">숫자로 보는 금호자동차상사</div>
       <div class="section-sub" style="text-align:center">15년의 신뢰가 만든 결과입니다</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;text-align:center">
-        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">15년</div><div style="font-size:13px;color:#666;margin-top:6px">업력</div></div>
+        <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">26년</div><div style="font-size:13px;color:#666;margin-top:6px">대표 업력</div></div>
         <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">9명</div><div style="font-size:13px;color:#666;margin-top:6px">전문 딜러</div></div>
         <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">1,200+</div><div style="font-size:13px;color:#666;margin-top:6px">거래 완료</div></div>
         <div style="background:#fff;border-radius:14px;padding:28px 16px;border:1px solid #e8eaf0"><div style="font-size:36px;font-weight:700;color:#2e7cf6">4.9★</div><div style="font-size:13px;color:#666;margin-top:6px">고객 만족도</div></div>
@@ -268,6 +271,23 @@ footer strong{color:#c5d0e8}
     </div>
   </section>
   <section style="background:#fff">
+    <div class="section-inner">
+      <div class="section-title">취급 업무</div>
+      <div class="section-sub">자동차와 관련된 모든 절차를 한 곳에서 처리해드립니다</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px">
+        <div style="background:#f5f7fa;border-radius:12px;padding:18px;text-align:center"><div style="font-size:24px;margin-bottom:6px">🚗</div><div style="font-size:13px;font-weight:600">자동차매매</div></div>
+        <div style="background:#f5f7fa;border-radius:12px;padding:18px;text-align:center"><div style="font-size:24px;margin-bottom:6px">🤝</div><div style="font-size:13px;font-weight:600">알선·위탁</div></div>
+        <div style="background:#f5f7fa;border-radius:12px;padding:18px;text-align:center"><div style="font-size:24px;margin-bottom:6px">📋</div><div style="font-size:13px;font-weight:600">등록대행</div></div>
+        <div style="background:#f5f7fa;border-radius:12px;padding:18px;text-align:center"><div style="font-size:24px;margin-bottom:6px">💳</div><div style="font-size:13px;font-weight:600">할부판매</div></div>
+        <div style="background:#f5f7fa;border-radius:12px;padding:18px;text-align:center"><div style="font-size:24px;margin-bottom:6px">🛡️</div><div style="font-size:13px;font-weight:600">자동차보험</div></div>
+        <div style="background:#f5f7fa;border-radius:12px;padding:18px;text-align:center"><div style="font-size:24px;margin-bottom:6px">♻️</div><div style="font-size:13px;font-weight:600">폐차</div></div>
+        <div style="background:#f5f7fa;border-radius:12px;padding:18px;text-align:center"><div style="font-size:24px;margin-bottom:6px">🚢</div><div style="font-size:13px;font-weight:600">수출</div></div>
+      </div>
+      <p style="font-size:12px;color:#aaa;margin-top:14px;text-align:center">승용차, 화물차 등 모든 종류의 중고 자동차를 사고팝니다</p>
+    </div>
+  </section>
+
+  <section>
     <div class="section-inner">
       <div class="section-title">공식 소속 및 인증</div>
       <div class="section-sub">검증된 기관에 소속된 정식 매매상사입니다</div>
@@ -319,7 +339,7 @@ footer strong{color:#c5d0e8}
       <h3 style="font-size:24px;font-weight:700;margin-bottom:12px">지금 바로 상담해보세요</h3>
       <p style="color:#c5d8f0;font-size:15px;margin-bottom:28px">9명의 전문 딜러가 최적의 차량을 찾아드립니다</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <button onclick="goConsult('')" style="background:#fff;color:#1a3a6b;border:none;padding:13px 28px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">📝 상담 신청하기</button>
+        <button onclick="showPage('contact',null);document.querySelectorAll('.nav-links a').forEach((a,i)=>{a.classList.remove('active');if(i===4)a.classList.add('active')})" style="background:#fff;color:#1a3a6b;border:none;padding:13px 28px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">📝 상담 신청하기</button>
         <button onclick="window.open(KAKAO_CHANNEL_URL,'_blank')" style="background:#fee500;color:#3c1e1e;border:none;padding:13px 28px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">💬 카카오톡 상담</button>
       </div>
     </div>
@@ -339,37 +359,27 @@ footer strong{color:#c5d0e8}
 <div id="page-contact" class="page-section">
   <section>
     <div class="section-inner">
-      <div class="section-title">상담 신청</div>
-      <div class="section-sub">빠른 시간 내에 연락드리겠습니다 (평일 09:00~18:00)</div>
-      <div class="contact-grid">
-        <div class="contact-form">
-          <h3>📝 온라인 상담 신청</h3>
-          <div class="form-group"><label>성함 *</label><input type="text" id="f-name" placeholder="홍길동"></div>
-          <div class="form-group"><label>연락처 *</label><input type="tel" id="f-phone" placeholder="010-0000-0000"></div>
-          <div class="form-group"><label>관심 차량</label><input type="text" id="f-car" placeholder="예: 그랜저, 싼타페 등"></div>
-          <div class="form-group"><label>예산</label><select id="f-budget"><option value="">선택</option><option>1,000만원 이하</option><option>1,000~2,000만원</option><option>2,000~3,000만원</option><option>3,000만원 이상</option></select></div>
-          <div class="form-group"><label>문의 내용</label><textarea id="f-msg" placeholder="궁금하신 점을 자유롭게 작성해주세요"></textarea></div>
-          <button class="submit-btn" onclick="submitForm()">상담 신청하기 →</button>
+      <div class="section-title">연락하기</div>
+      <div class="section-sub">전화 또는 카카오톡으로 편하게 문의해주세요</div>
+      <div style="max-width:520px;margin:0 auto">
+        <div class="info-card" style="text-align:center;padding:36px 28px">
+          <div style="font-size:13px;font-weight:700;color:#2e7cf6;letter-spacing:1px;margin-bottom:6px">PHONE</div>
+          <div style="font-size:30px;font-weight:700;color:#1a1a2e;margin-bottom:6px">051-292-4333</div>
+          <div style="font-size:13px;color:#888;margin-bottom:24px">평일 09:00 ~ 18:00 · 토요일 09:00 ~ 15:00</div>
+          <a href="tel:051-292-4333" style="display:block;background:#2e7cf6;color:#fff;padding:14px;border-radius:10px;font-size:16px;font-weight:700;margin-bottom:12px;">📞 전화 걸기</a>
+          <button class="kakao-btn" style="padding:14px;font-size:16px;" onclick="window.open(KAKAO_CHANNEL_URL,'_blank')">💬 카카오톡 채널 상담</button>
         </div>
-        <div class="contact-info">
-          <div class="info-card">
-            <h4>🏆 KB차차차 공식 제휴 딜러</h4>
-            <p style="font-size:13px;color:#666;line-height:1.7;margin-bottom:12px">KB시세 기반의 투명한 가격으로 거래합니다.</p>
-            <a href="https://www.kbchachacha.com/" target="_blank" style="display:block;text-align:center;background:#f5a800;color:#fff;padding:10px;border-radius:8px;font-size:14px;font-weight:700;">KB차차차에서 매물 보기 →</a>
-          </div>
-          <div class="info-card">
-            <h4>📞 바로 연락하기</h4>
-            <div class="info-row"><div class="info-icon">📱</div><div><strong>051-292-4333</strong><br><span style="font-size:12px;color:#888">평일 09:00 ~ 18:00</span></div></div>
-            <div class="info-row"><div class="info-icon">✉️</div><div>wkdtnr58@naver.com</div></div>
-            <div style="margin-top:14px"><button class="kakao-btn" onclick="window.open(KAKAO_CHANNEL_URL,'_blank')">💬 카카오톡 채널 상담</button></div>
-          </div>
-          <div class="info-card">
-            <h4>⏰ 영업 시간</h4>
-            <div style="font-size:14px;color:#444;line-height:2">
-              <div style="display:flex;justify-content:space-between"><span>월 ~ 금</span><strong>09:00 ~ 18:00</strong></div>
-              <div style="display:flex;justify-content:space-between"><span>토요일</span><strong>09:00 ~ 15:00</strong></div>
-              <div style="display:flex;justify-content:space-between"><span>일요일 / 공휴일</span><strong style="color:#e74c3c">휴무</strong></div>
-            </div>
+
+        <div class="info-card" style="margin-top:16px">
+          <h4>🏆 KB차차차 공식 제휴 딜러</h4>
+          <p style="font-size:13px;color:#666;line-height:1.7;margin-bottom:12px">KB시세 기반의 투명한 가격으로 거래합니다.</p>
+          <a href="https://www.kbchachacha.com/" target="_blank" style="display:block;text-align:center;background:#f5a800;color:#fff;padding:10px;border-radius:8px;font-size:14px;font-weight:700;">KB차차차에서 매물 보기 →</a>
+        </div>
+
+        <div class="info-card" style="margin-top:16px">
+          <h4>⏰ 영업 시간</h4>
+          <div style="font-size:14px;color:#444;line-height:2">
+            <div style="display:flex;justify-content:space-between"><span>매일 (월~일)</span><strong>09:00 ~ 18:00</strong></div>
           </div>
         </div>
       </div>
@@ -431,6 +441,7 @@ footer strong{color:#c5d0e8}
         </div>
       </div>
       <div class="modal-actions"><button class="btn-kakao" id="modal-kakao-btn">💬 카카오톡 상담</button><button class="btn-call" id="modal-call-btn">📞 전화 상담</button></div>
+      <a id="modal-kb-btn" href="#" target="_blank" style="display:none;margin-top:10px;text-align:center;background:#f5a800;color:#fff;padding:12px;border-radius:10px;font-size:14px;font-weight:700;">🏆 KB차차차에서 보기 →</a>
     </div>
   </div>
 </div>
@@ -501,14 +512,14 @@ async function loadData() {
       if (v[0] === '0' || v[0].toLowerCase() === 'dummy') return null;
       const soldDate = v[14] ? new Date(v[14]) : null;
       if (soldDate && (new Date() - soldDate) / 86400000 > 30) return null;
-      const photos = v.slice(17).filter(p => p.startsWith('http')).map(toDriveImageUrl);
+      const photos = v.slice(18).filter(p => p.startsWith('http')).map(toDriveImageUrl);
       return {
         id: v[0], name: v[1], brand: v[2], type: v[3], body: v[4],
         year: v[5], km: v[6], fuel: v[7], color: v[8],
         price: parseInt(v[9]) || 0,
         hot: v[10].toUpperCase() === 'Y', badge: v[11], desc: v[12],
         status: v[13] || '판매중', soldDate,
-        youtube: v[15], dealerId: v[16], photos
+        youtube: v[15], dealerId: v[16], kbUrl: v[17], photos
       };
     }).filter(Boolean);
 
@@ -568,7 +579,7 @@ function renderCards(data, containerId) {
         <div class="car-specs"><span class="car-spec">${c.km}</span><span class="car-spec">${c.fuel}</span><span class="car-spec">${c.color}</span></div>
         <div class="car-actions">
           <button class="btn-detail" onclick="event.stopPropagation();openModal('${c.id}')">상세보기</button>
-          <button class="btn-consult" onclick="event.stopPropagation();goConsult('${c.name}')">상담신청</button>
+          <button class="btn-consult" onclick="event.stopPropagation();showPage('contact',null);document.querySelectorAll('.nav-links a').forEach((a,i)=>{a.classList.remove('active');if(i===4)a.classList.add('active')})">연락하기</button>
         </div>
       </div>
     </div>`).join('');
@@ -648,6 +659,14 @@ function openModal(id) {
     <div class="spec-item"><div class="spec-label">색상</div><div class="spec-val">${c.color}</div></div>
     <div class="spec-item"><div class="spec-label">브랜드</div><div class="spec-val">${c.brand}</div></div>`;
   document.getElementById('modal-desc').textContent = c.desc;
+
+  const kbBtn = document.getElementById('modal-kb-btn');
+  if (c.kbUrl && c.kbUrl.startsWith('http')) {
+    kbBtn.href = c.kbUrl;
+    kbBtn.style.display = 'block';
+  } else {
+    kbBtn.style.display = 'none';
+  }
 
   const dc = document.getElementById('modal-dealer-card');
   if (d) {
@@ -738,36 +757,6 @@ function goConsult(carName) {
   document.querySelectorAll('.nav-links a').forEach((a,i)=>{a.classList.remove('active');if(i===4)a.classList.add('active')});
 }
 
-async function submitForm() {
-  const n=document.getElementById('f-name').value;
-  const p=document.getElementById('f-phone').value;
-  if(!n||!p){showToast('성함과 연락처는 필수 입력 항목입니다');return}
-  const data = {
-    name: n, phone: p,
-    car: document.getElementById('f-car').value,
-    budget: document.getElementById('f-budget').value,
-    message: document.getElementById('f-msg').value
-  };
-  const btn = document.querySelector('.submit-btn');
-  const origText = btn.textContent;
-  btn.textContent = '전송 중...';
-  btn.disabled = true;
-  try {
-    const res = await fetch(APPS_SCRIPT_URL, { method: 'POST', headers: {'Content-Type':'text/plain'}, body: JSON.stringify(data) });
-    const resText = await res.text();
-    alert('응답 status: ' + res.status + '\n응답 내용: ' + resText);
-    showToast('상담 신청이 완료되었습니다! 곧 연락드리겠습니다 😊');
-    ['f-name','f-phone','f-car','f-msg'].forEach(id=>document.getElementById(id).value='');
-    document.getElementById('f-budget').value='';
-  } catch(e) {
-    alert('전송 에러: ' + e.message);
-    showToast('전송 중 오류가 발생했습니다. 전화로 문의해주세요 📞');
-  } finally {
-    btn.textContent = origText;
-    btn.disabled = false;
-  }
-}
-
 function showToast(msg) {
   const t=document.getElementById('toast');
   t.textContent=msg;t.classList.add('show');
@@ -801,12 +790,17 @@ async function loadGallery() {
     }).filter(g => g && g.url.startsWith('http'));
     if (!imgs.length) return;
     galleryLoaded = true;
-    document.getElementById('gallery-grid').innerHTML = imgs.map(g =>
+    const ceoImg = imgs.find(g => g.caption && (g.caption.includes('대표')));
+    if (ceoImg) {
+      document.getElementById('ceo-photo').innerHTML = `<img src="${ceoImg.url}" style="width:100%;height:100%;object-fit:cover;">`;
+    }
+    const galleryImgs = imgs.filter(g => g !== ceoImg);
+    document.getElementById('gallery-grid').innerHTML = galleryImgs.length ? galleryImgs.map(g =>
       `<div style="border-radius:12px;overflow:hidden;position:relative;height:180px;background:#e8eef8;">
         <img src="${g.url}" style="width:100%;height:100%;object-fit:cover;" alt="${g.caption}">
         ${g.caption ? `<div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.45);color:#fff;font-size:12px;padding:6px 10px;">${g.caption}</div>` : ''}
       </div>`
-    ).join('');
+    ).join('') : document.getElementById('gallery-grid').innerHTML;
   } catch(e) {}
 }
 
